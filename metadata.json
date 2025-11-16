@@ -1,0 +1,7 @@
+{
+  "name": "Geo Task Tracker MVP",
+  "description": "A mobile-first task tracking application that simulates geofencing to manage clock-in/out functionality based on the user's location. It features a main timer for total work hours and a list of daily tasks.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
