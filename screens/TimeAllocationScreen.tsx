@@ -36,7 +36,7 @@ const TimeAllocationScreen: React.FC<TimeAllocationScreenProps> = ({
 
   const { totalAllocatedTime, totalTrackedAllocated, totalUntrackedAllocated } = useMemo(() => {
     // FIX: Explicitly typing the reducer's parameters resolves TypeScript's incorrect type inference.
-    const totalAllocated = Object.values(allocations).reduce((sum: number, seconds: number) => sum + (seconds || 0), 0);
+    const totalAllocated = (Object.values(allocations) as number[]).reduce((sum, seconds) => sum + (seconds || 0), 0);
     const tracked = Math.min(totalAllocated, totalShiftSeconds);
     const untracked = Math.max(0, totalAllocated - totalShiftSeconds);
     return { 
